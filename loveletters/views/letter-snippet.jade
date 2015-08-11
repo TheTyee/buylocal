@@ -1,0 +1,13 @@
+
+for l in individual
+ if l.website
+   p Dear <a href="#{l.website}">#{l.business}</a>,
+ else
+   p Dear #{l.business},
+
+ p !{l.letter}
+ if l.showName == "Yes"
+  p.signatory #{l.name} #{l.lastinitial}.
+                
+ else
+  p.signatory Anonymous

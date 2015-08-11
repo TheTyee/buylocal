@@ -1,0 +1,625 @@
+@import "bourbon/bourbon";
+@import "grid-settings"; // or "bourbon" when in Rails
+@import "neat/neat"; // or "neat" when in Rails
+@import "reset";
+
+// $accent-color: 
+
+img {
+  max-width: 100%;
+  
+}
+
+iframe {
+  max-width: 95%;
+  margin:auto;
+  box-sizing: border-box;
+}
+$lightblue: #82bee7;
+// $vancityred: #b92c13;
+// $vancityred: #e2442f;
+$vancityred: #e93715;
+$purple: #92159e;
+$purplefont: #79219f;
+
+$lightgrey: #e7ebe2;
+$slateblue: #87a5c9;
+$darkblue: #28358b;
+$winter: #dee5ed;
+$winterborder: #9db6db;
+$navblue: #3f679e;
+
+//fonts & stuff
+
+$accentfont: "franklin-gothic-urw-cond",sans-serif;
+
+body {
+  font-family: $lucida-grande;
+  // padding: 1em;
+  margin:auto;
+  // padding-top:3em;
+  color: #222;
+
+  @include media($big){
+    padding: 0;
+  }
+}
+
+h1 {
+  font-family: $accentfont;
+  text-transform: uppercase;
+  color: rgba(0,0,0,.4);
+  // text-shadow: 0 0 3px #000;
+  margin-bottom: 1.5rem;
+}
+
+img {
+  max-width:100%;
+  border-radius: 5px;
+}
+
+ul {
+  margin:0;
+  padding:0;
+}
+ul li {
+  // display:inline-block;
+  list-style-type:none;
+}
+
+a, a:visited {
+  color: darken($slateblue, 10);
+  transition: all .3s ease;
+
+  &:hover {
+    color: $slateblue;
+    // border-bottom: 1px solid $slateblue;
+  }
+}
+
+h2.heading {
+  color: $purplefont;
+  font-family: $accentfont;
+  border-bottom: 3px solid $purple;
+  margin-bottom: 1.5rem;
+}
+
+.container {
+  @include outer-container;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+
+  @include media($big){
+    padding-right:0;
+    padding-left:0;
+  }
+}
+
+div, section, p {
+  padding-bottom: 1.5rem;
+}
+
+//Header
+header.container {
+margin-top: 1.5em;
+margin-bottom: 1.5em;
+}
+
+//Prizes
+
+.short-prize-description{
+  // border-top: 10px solid $slateblue;
+  @include media($big){
+    @include span-columns(2 of 4);
+    @include omega(2n);
+  }
+
+  img {
+    margin-top: -5px;
+  }
+
+  h3 {
+    padding-bottom: .75rem;
+  }
+}
+
+.short-prize-description:last-of-type {
+  float:none;
+  width: 100%;
+
+}
+//FORM
+
+div.intro {
+  @include media($big) {
+    @include span-columns(8);
+   
+  }
+
+}
+
+section.sponsors {
+  // background: rgba(222, 222, 222, 0.1);
+  // border-radius: 5px;
+  // border: 1px solid #dedede;
+  padding: 1em;
+
+  @include media($big) {
+    @include span-columns(4);
+    @include omega();
+    padding-top:0;
+
+   
+  }
+
+  p {
+    font-size: 1.8rem;
+    @include media($big){
+      font-size: 1.3rem;      
+    }
+
+  }
+
+
+ 
+}
+
+.sidebar-header {
+  font-family: $accentfont;
+  border-bottom: 3px solid $slateblue;
+  margin-bottom: 1.5rem;
+  // text-transform: uppercase;
+  // text-align: center;
+  // margin-top: 6px;
+
+}
+
+.enter-contest a {
+border-radius: 5px;
+background: $purple;
+color: white;
+display:block;
+margin: auto;
+margin-bottom: 1.5rem;
+text-align: center;
+font-size: 2.4rem;
+// font-style: italic;
+// text-transform: uppercase;
+font-family: $accentfont;
+text-transform: none;
+transition: background .3s ease;
+  &:hover {
+    background: lighten($purple, 10);
+    color: white;
+    border: none;
+  }
+}
+//ICONIC
+
+
+.iconic {
+  height: 2em;
+  width: 2em;
+  fill: #87a5c9;
+  transition: fill .3s ease;
+  margin: 0 .7em;
+  margin-bottom: -6px;
+
+  &:hover {
+    fill: darken($slateblue, 20);
+  }
+}
+
+.individual-letter .iconic {
+  @include media($big){
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: .5em;
+
+  }
+ 
+}
+
+.iconic .iconic-property-stroke {
+  fill: $slateblue;
+}
+
+.share-letter-tools a:hover {
+  border-bottom: none;
+
+}
+
+.share-letter-tools p {
+  font-family: $accentfont;
+  text-transform: uppercase;
+  font-size: .8em;
+  color: lighten($slateblue, 10);
+  padding-bottom: 0;
+  padding-top: 1.5em;
+}
+
+header.share-letter-tools {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  padding-bottom: 1.5em;
+
+
+  p {
+    padding-top: 0;
+  }
+}
+
+
+//Vancity card display
+.vancity-content {
+  background: #f2e0cf;
+  padding: 1em;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  @include media($big) {
+    @include span-columns(12);
+  }
+
+}
+
+.vancity-photo {
+
+  position: relative;
+  padding-right: 2em;
+  padding-bottom: 2em;
+  @include media($big) {
+    @include span-columns(6 of 12);
+  }
+}
+
+.vancity-details {
+  @include media($big) {
+    @include span-columns(6 of 12);
+  }
+}
+
+.loco-tag {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+}
+
+p.twitter {
+  font-size: .8em;
+}
+p.bcbuylocal {
+text-align: right;
+font-size: 3em;
+padding: 0 !important;
+font-family: $accentfont;
+font-style: italic;
+text-transform: uppercase;
+
+  a {
+    color: #fff;
+    text-shadow: 0px 0px 2px rgba(#000,.6);
+    transition: color .3s ease;
+
+
+    &:hover {
+      color: $vancityred;
+      text-shadow: none;
+      border-bottom: none;
+    }
+  }
+}
+
+.vancity-content a, .vancity-content:visited {
+  color: $vancityred;
+
+  &:hover {
+    color: #a72811;
+  }
+}
+
+
+
+.vancity-ack img {
+  float: left;
+  width: 23%;
+  padding-right: 2em;
+  
+}
+
+footer.vancity-ack {
+font-size: .8em;
+font-style: italic;
+margin-top: 2em;
+}
+
+.vancity-ack p {
+  padding-left: 2.5em;
+  // padding-top: .75em;
+  padding-right: 2.5em;
+}
+
+.vancity-content h2 {
+  text-decoration: underline;
+  padding-bottom: 1.5rem;
+  font-family: $accentfont;
+  text-transform: uppercase;
+}
+
+a.vancity-learn-more, a.vancity-learn-more:visited {
+/* background: #f2e0cf; */
+background: #ffffff;
+border: 1px solid #b92c13;
+display: inline-block;
+padding: 5px;
+border-radius: 5px;
+color: #b92c13;
+// font-size: 1.6em;
+font-family: "Lucida Grande", Verdana, sans-serif;
+transition: all .3s linear;
+
+  &:hover {
+
+    background: #f2e0cf;
+    text-decoration: none;
+    color: #a72811;
+    
+  }
+}
+
+
+//Greeting card display
+.individual-letter {
+  
+  border: 3px solid $slateblue;
+  padding: 2em;
+  border-radius: 5px;
+  margin-bottom: 1.5em;
+  padding-bottom: 0;
+
+  @include media($big){
+    font-size: 3rem;
+   
+  }
+}
+
+.column {
+  @include media($big){
+    @include span-columns(8);
+  }
+}
+
+.letter-sample {
+  @include outer-container;
+}
+.greeting-card .holiday-card {
+  padding: 1em;
+  // padding-bottom: 0;
+  border-radius: 5px;
+  border: 1px solid #dedede;
+  margin-bottom:1em;
+  background: rgba(#dedede, .1);
+  
+
+  @include media($big) {
+    @include span-columns(4);
+    @include omega(3n);
+    height: 350px;
+    overflow-y: auto;
+  }
+}
+
+.signatory {
+  font-style: italic;
+  font-size: .8em;
+  padding-left: .5em;
+
+  &:before {
+    content: "\2014";
+    padding-right: .5em;
+
+  }
+}
+
+
+.letter-share, a.letter-share:visited{
+  display:inline-block;
+  width:50%;
+  background: $lightblue;
+  text-align: center;
+  border: 1px solid #fff;
+  border-top-left-radius: 5px;
+  transition: background .3s linear;
+  padding: .5rem;
+  margin-top: 1rem;
+  color: #222;
+
+  &:hover {
+    background: darken($lightblue, 20);
+    color: #ffffff;
+  }
+
+
+}
+
+//Read more
+
+.readmore-js-section {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 150px;
+
+
+}
+
+a.readmore-js-toggle {
+  display: block;
+  text-align: center;
+  // margin-top: 15px;
+  background: rgba($purple, .3);
+  color: #222;
+  border-radius: 5px;
+  padding: 3px;
+
+  &:hover {
+    border: none;
+    background: rgba($purple, .6);
+  }
+
+}
+//PRizes
+
+div.prize-list {
+  @include media($big){
+    @include span-columns(8);
+  }
+}
+//body footer display
+.about-sponsors { 
+  // background: $lightblue;
+
+  
+  padding: 1em;
+  // padding-top:2rem;
+}
+
+.about-sponsors .container {
+  border-top: 3px solid $slateblue;
+  // padding-top:2em;
+}
+
+.about-sponsors p {
+  font-size: 1.3rem;
+
+  a {
+    color: #222;
+    text-decoration: underline;
+  }
+}
+
+h2.partner-heading {
+  font-family: $accentfont;
+  // text-align: center;
+  border-bottom: 3px solid rgba(#ffffff, .4);
+  margin-bottom: 1.5rem;
+}
+
+.contest-partner {
+
+  @include media($big) {
+    @include span-columns(4);
+  }
+}
+
+//Header reworking
+
+.elbanner {
+   background: url('/images/BuyLocal-banner-background.jpg')  no-repeat top center;
+   height: 165px;
+   margin-bottom: 1.5rem;
+
+   @include media($big){
+    height: 229px;
+    margin-bottom: 3rem;
+
+   }
+
+}
+
+.eldeclaration {
+  background:url('/images/BuyLocal-banner-cta-700.png') no-repeat top center;
+  background-size: auto 100%;
+  height:170px;
+  margin: auto;
+
+  @include media($big){
+    background:url('/images/BuyLocal-banner-cta-966.png') no-repeat top center;
+    height:229px;
+    max-width:960px;
+    background-size: 100% auto;
+  }
+  
+}
+
+.ellogo img {
+  display:block;
+  margin:auto;
+  @include media($big){
+  max-height: 6rem;
+  margin-top: 1rem;
+  float: left;
+
+  }
+  
+}
+
+ul.menu li {
+  display: inline-block;
+ 
+}
+
+//Top Navigation
+nav.main {
+  background: $winter;
+  text-align: right;
+  // position: fixed;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid $winterborder;
+  }
+  
+
+ul.menu a {
+  display:block;
+  color: $navblue;
+  border-bottom:2px solid $winter;
+  transition: all .3s ease;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-bottom: .75em;
+  &:hover {
+    // background: darken($navblue, 10);
+    border: none;
+    color: $purple;
+    border-bottom: 2px solid $purple;
+
+  }
+
+  @include media($big){
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    padding-bottom:1rem;
+    margin-top:1rem;
+    
+    
+
+  }
+
+
+
+}
+
+ul.menu li:last-child a {
+
+    background: $purple;
+    border-radius: 25px;
+    color: white;
+    border:none;
+
+    &:hover {
+      border:none;
+      background: lighten($purple, 10);
+    }
+  
+}
+
+.intro p{
+  color: $purplefont;
+  font-size: 1.8rem;
+
+}
+

@@ -1,0 +1,93 @@
+doctype html
+html
+  head
+    title Send a holiday greeting to your favourite local biz (and win!) | The Tyee 
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="icon" href="http://thetyee.ca/favicon.ico")
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+    meta(property="og:title" content="Send a holiday greeting to your favourite local biz (and win!)")
+    meta(property="og:site_name" content="Send a holiday greeting to your favourite local biz (and win!)")
+
+    script(src="//use.typekit.net/uky8tja.js")
+    script.
+      try{Typekit.load();}catch(e){}
+
+  body
+    nav.main
+      div.container
+        div.ellogo
+          a(href="http://thetyee.ca")
+            img(src="/images/tyee-logo.png")
+     
+        ul.menu
+          li.prizes 
+            a(href="/prizes") Prizes
+          li.letters
+            a(href="/cards") Readers' cards
+          li.about 
+            a(href="/") About the contest   
+          li.enter-now 
+            a(href="/form") Enter now
+      
+    div.elbanner
+       a(href="/")
+        div.eldeclaration
+       
+   
+
+    block content
+
+   
+
+    footer.about-sponsors
+        div.container
+          h1 Contest Partners
+
+          div.contest-partner
+            h2.partner-heading LOCO
+            p.
+              LOCO works to strengthen our communities, build the local economy and build strong, sustainable businesses by increasing local spending by consumers, businesses and institutions/government. 
+            p.
+              We connect, support and promote local businesses, and provide research on the economic benefits of local purchasing and procurement. We launched, and continue to coordinate the BC Buy Local campaign to educate consumers and purchasers about the value <b><i>local owned</i></b> businesses, <b><i>local grown</i></b> and <b><i>local made</i></b> products generate in our communities. 
+            p.
+              Want to support the work we do? <a href="http://locobc.com/">Become a member</a>.
+            a(href="http://locobc.com")
+              img(src="/images/LoCo_Logo_Magenta.jpg")
+
+
+          div.contest-partner
+            h2.partner-heading The Tyee
+            p.
+              In November 2003, The Tyee began its swim upstream against the media trends of our day. We're independent and not owned by any big corporation, and based in Vancouver, BC. We're dedicated to publishing lively, informative news and views, not dumbed down fluff. We, like the tyee salmon for which we're named, roam free and go where we wish.
+            p.
+              Eleven years later?  We've helped revive old-style, long-form reporting and shed light on the stories and solutions big media ignores. Our writers are some of the best in the country. Together, we've broken major stories and won major awards. The Tyee is now a widely read and respected platform for the forward-thinking, fact-based conversation our province and country desperately need to have. 
+            p.
+              Learn more about us <a href="http://thetyee.ca/About/Us/">here</a>
+
+            //- p.
+            //-   This contest is part of a Tyee Presents initiative. Tyee Presents is the special section within The Tyee where we highlight contests, events, and other initiatives that are either put on by The Tyee or by our select partners. We choose our partners carefully and consciously, to fit with The Tyee’s reputation as BC’s Home for News, Culture and Solutions. Learn more about Tyee Presents <a href="http://www.thetyee.ca/About/Advertise/Tyee-Presents/index.html">here</a>.
+            a(href="http://thetyee.ca")
+              img(src="/images/tyee-logo.png")
+
+          div.contest-partner
+            h2.partner-heading Vancity
+           
+            p.
+              Vancity is a values-based financial co-operative serving the needs of over 492,000 member-owners and their communities through 57 branches in Metro Vancouver, the Fraser Valley, Victoria and Squamish.
+            p.
+              As Canada’s largest community credit union, Vancity uses up to $17.1 billion in assets to help improve the financial wellbeing of its members while at the same time helping to develop healthy, sustainable communities. Member deposits enable us to loan to other members, businesses and organizations that are creating positive economic, social and environmental impact in their communities.
+            p.
+              We’re proud to be a Living Wage employer and a member of the Global Alliance for Banking on Values.
+            a(href="https://vancity.com")
+              img(src="/images/vancity.png")
+
+
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+    script(src="/javascripts/iconic.min.js")
+    script(src="/javascripts/readmore.js")
+    script(src="/javascripts/vancity.js")
+    include inc/ga.html
+   
+    block script

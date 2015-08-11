@@ -1,0 +1,177 @@
+extends layout
+
+
+
+block content
+  if success 
+    div.container
+      h2.success-message. <b>Message received</b>.  
+      h2.success-message. Thanks for sending your favourite local business some holiday love.
+      p. You’ll receive a confirmation email shortly.  Feel free to write up to five letters, for five separate entries!
+ 
+  
+
+  if individual
+    for l in individual
+      div.container
+        div.column
+          div.individual-letter
+           if l.website
+             p Dear <a href="#{l.website}">#{l.business}</a>,
+           else
+             p Dear #{l.business},
+
+           p !{l.letter}
+           if l.showName == "Yes"
+            p.signatory #{l.name} #{l.lastinitial}.
+                          
+           else
+            p.signatory Anonymous
+
+           section.share-letter-tools
+            p Share card: 
+              a(href="http://twitter.com/share?text=#{l.business} gets some love&url=http://104.131.133.209/cards/#{l.entryID}&hashtags=bcbuylocal")
+                <img data-type="twitter" data-src="/images/social.svg" class="iconic" alt="social" />
+              a(href="http://facebook.com/sharer.php?u=http%3A%2F%2F104.131.133.209%2Fcards%2F#{l.entryID}")
+                <img data-type="facebook" data-src="/images/social.svg" class="iconic" alt="social" />
+          
+          if !success
+            h2.heading Write your own card before December 8th and enter to win
+          else
+            h2.heading Write another card
+          include inc/form.html
+
+
+        section.sponsors
+          h3.sidebar-header Contest brought to you by
+          img(src="/images/livelocalbuy.png")
+          include inc/shortprize.html 
+        
+
+
+          
+             
+    else
+     if theletter
+      div.container.loading
+        div.column
+          div.individual-letter
+            div.replace Loading....
+            
+            section.share-letter-tools
+             p Share card: 
+               a(href="http://twitter.com/share?text=Giving local business some love&url=http://104.131.133.209/cards/#{theletter}&hashtags=bcbuylocal")
+                 <img data-type="twitter" data-src="/images/social.svg" class="iconic" alt="social" />
+               a(href="http://facebook.com/sharer.php?u=http%3A%2F%2F104.131.133.209%2Fcards%2F#{theletter}")
+                 <img data-type="facebook" data-src="/images/social.svg" class="iconic" alt="social" />
+          if !success
+            h2.heading Write your own card before December 8th and enter to win
+          else
+            h2.heading Write another card
+          include inc/form.html
+
+          
+
+        section.sponsors
+          h3.sidebar-header Contest brought to you by
+          img(src="/images/livelocalbuy.png")
+
+                
+
+  div.container 
+
+
+    h2.heading All Cards
+    ul.greeting-card
+      for l in letters
+        li.holiday-card
+          header.share-letter-tools
+            p
+              a(href="http://twitter.com/share?text=#{l.business} gets some love&url=http://buylocal.thetyee.ca/cards/#{l.entryID}&hashtags=bcbuylocal")
+                <img data-type="twitter" data-src="/images/social.svg" class="iconic" alt="social" />
+              a(href="http://facebook.com/sharer.php?u=http%3A%2F%2Fbuylocal.thetyee.ca%2Fcards%2F#{l.entryID}")
+                <img data-type="facebook" data-src="/images/social.svg" class="iconic" alt="social" />
+              a(href="/cards/#{l.entryID}" style="margin-left:.7em") Permalink
+        
+          if l.website
+            p Dear <a href="#{l.website}">#{l.business}</a>,
+          else
+            p Dear #{l.business},
+
+          p !{l.letter}
+          if l.showName == "Yes"
+            p.signatory #{l.name} #{l.lastinitial}.
+
+          else
+            p.signatory Anonymous
+
+          //- section.share-letter-tools
+            p 
+              a(href="http://twitter.com/share?text=#{l.business} gets some love&url=http://104.131.133.209/cards/#{l.entryID}&hashtags=bcbuylocal")
+                <img data-type="twitter" data-src="/images/social.svg" class="iconic" alt="social" />
+              a(href="http://facebook.com/sharer.php?u=http%3A%2F%2F104.131.133.209%2Fcards%2F#{l.entryID}")
+                <img data-type="facebook" data-src="/images/social.svg" class="iconic" alt="social" />
+              
+                //- <img data-state="intact" data-src="/images/link.svg" class="iconic" alt="link" />
+block script
+  script.
+
+    $('.read-more').readmore({
+       speed: 2000,
+       //- maxHeight: 200,
+       embedCSS: false,
+       moreLink: '<a href="#">Read full card</a>',
+       beforeToggle: function(trigger, element, more) {
+
+          var page = $(element).attr('data-page');
+          window.location.href = "/cards/" + page;
+          return false;
+
+       }
+
+      });
+
+    var count = 1;
+    var timeoutID = 0;
+    var magic = function(){
+     $.ajax({
+        url: '/get/card/#{theletter}',
+        data: {
+           format: 'html'
+        },
+        error: function() {
+           $('.replace').html('<p>An error has occurred</p>');
+        },
+        dataType: 'html',
+        success: function(data) {
+           
+            if(data){
+              $('.replace')
+                 .html(data);
+
+            }
+            else{
+            timeOutId = setTimeout(magic, 100);//set the timeout again
+                                console.log("call");
+            }
+           
+           
+              
+        },
+        type: 'GET'
+     });
+
+    }
+
+    magic();
+
+
+
+
+    //- var timeoutID = window.setTimeout(function(){
+    //-    count ++;
+    //-    $('.replace').html(count);
+
+    //-   }, 50);
+  
+    

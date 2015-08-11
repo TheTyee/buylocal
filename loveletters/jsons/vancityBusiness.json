@@ -1,0 +1,29 @@
+[
+  {
+    "business":"Greenworks Building Supply",
+    "description":"Greenworks Building Supply is a building supplies store specializing in environmentally friendly building materials and products. By sourcing materials and products locally and ensuring they are truly green, Greenworks is helping to build a greener community.",
+    "img":"Greenworks.jpg",
+    "twitter":"Greenworks_YVR",
+    "website":"http://www.greenworksbuildingsupply.com/",
+    "city":"Vancouver",
+    "storyLink":"https://www.vancity.com/AboutVancity/InvestingInCommunities/StoriesOfImpact/Energy/GreenWorks/"
+  },
+  {
+    "business":"The Soap Dispensary",
+    "description":"Keep yourself and our planet clean by bringing and filling your clean, reusable containers to fill with their soaps made from non-toxic, natural ingredients. Their store on Main street is perfect for families and individuals with sensitivities. ",
+    "img":"TheSoapDispensary.jpg",
+    "twitter":"SoapDispensary",
+    "website":"http://thesoapdispensary.com/ ",
+    "city":"Vancouver",
+    "storyLink":"https://www.vancity.com/AboutVancity/InvestingInCommunities/StoriesOfImpact/Energy/SoapDispensary/"
+  },
+  {
+    "business":"Everland Natural Foods",
+    "description":"Locally manufactures over 200 certified organic and natural food, breakfast and snack food items including New World® brand whole-grain granola, nut butters and Bliss Balls®, a gluten- and dairy-free confection. Find these edibles at your local organic grocer or at Sweet Cherubim.",
+    "img":"Everland.jpg",
+    "twitter":"EVERLANDFOODS",
+    "website":"http://www.everlandnaturalfoods.com/",
+    "city":"Burnaby",
+    "storyLink":"https://www.vancity.com/AboutVancity/InvestingInCommunities/StoriesOfImpact/Food/EverlandNaturalFoods/"
+  }
+]

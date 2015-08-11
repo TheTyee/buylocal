@@ -1,0 +1,31 @@
+extends layout
+
+
+
+block content
+  div.container
+    include inc/longprize.html
+
+      
+     
+    section.sponsors
+      h3.sidebar-header Brought to you by
+      img(src="/images/livelocalbuy.png")
+      h3.sidebar-header About this contest
+      p.
+        Local, independent businesses and social enterprises are the engines that drive a strong, vibrant economy and more connected communities.
+      p.
+        On average, Canadian families spend $1400 extra during the winter holiday season.  Let’s spend more of it locally and celebrate the businesses that make our neighbourhoods unique.
+      p
+        b. Tell us about the local business that makes your season bright. 
+      p.
+        This can be anything: the locally-owned shop or fair that sells unique gifts, your local butcher, or your favourite holiday destination or special attraction. Or a business you love all through the year and want to send good wishes to and share with readers.
+      if !success
+        div.enter-contest
+          | <a href="/form">Enter Now</a>
+      else
+        div.enter-content
+          a(href="/form") Enter Again
+
+
+      

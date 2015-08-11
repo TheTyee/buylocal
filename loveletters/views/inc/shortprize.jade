@@ -1,0 +1,8 @@
+h2.heading Prizes
+for p in elPrizes
+  div.short-prize-description
+    a(href="#{p.website}")
+      img(src="images/prizes/#{p.image}" class="prize-logo")
+    h3.
+      #{p.prize} from <a href="#{p.website}">#{p.company}</a> worth #{p.value}
+    p. #{p.shortdescription}

@@ -1,0 +1,54 @@
+extends layout
+
+block content
+  div.container
+    div.intro
+      p.
+        Local, independent businesses and social enterprises are the engines that drive a strong, vibrant economy. 
+      p.
+        On average, Canadian families spend $1,400 extra during the winter holiday season.  Let’s spend more of it locally and celebrate the people and places that make our neighbourhoods unique.
+      p.
+        Write a holiday greeting card (or five) to your favourite local business for your chance to win one of eleven prizes worth over $3000.  Get started right below!
+      h2.heading Enter Now
+      include inc/form.html
+
+    section.sponsors
+      h3.sidebar-header Contest brought to you by
+      img(src="/images/livelocalbuy.png")
+
+      include inc/shortprize.html
+  
+  
+    
+  
+
+      
+
+  section.letter-sample
+    div.container
+      h2.heading Recent letters 
+
+      ul.greeting-card
+        for l in letters
+          li.holiday-card
+            header.share-letter-tools
+              p
+                a(href="http://twitter.com/share?text=#{l.business} gets some love&url=http://buylocal.thetyee.ca/cards/#{l.entryID}&hashtags=bcbuylocal")
+                  <img data-type="twitter" data-src="/images/social.svg" class="iconic" alt="social" />
+                a(href="http://facebook.com/sharer.php?u=http%3A%2F%2Fbuylocal.thetyee.ca%2Fcards%2F#{l.entryID}")
+                  <img data-type="facebook" data-src="/images/social.svg" class="iconic" alt="social" />
+                a(href="/cards/#{l.entryID}" style="margin-left:.7em") Permalink
+                    
+            if l.website
+              p Dear <a href="#{l.website}">#{l.business}</a>,
+            else
+              p Dear #{l.business},
+
+            p !{l.letter}
+            if l.showName == "Yes"
+              p.signatory #{l.name} #{l.lastinitial}.
+
+            else
+              p.signatory Anonymous
+
+          
